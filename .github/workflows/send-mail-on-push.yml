@@ -14,15 +14,19 @@ jobs:
           username: ${{ secrets.EMAIL_USER }}
           password: ${{ secrets.EMAIL_PASSWORD }}
           subject: "🚀 Code Pushed to Your Repository"
-          body: |
-            A new commit has been pushed to your repository.
+          # Using HTML format for the body
+          html_body: |
+            <h1>🚀 Code Push Notification</h1>
+            <p>A new commit has been pushed to your repository.</p>
 
-            **Commit Details**:
-            - Commit Hash: ${{ github.sha }}
-            - Committer: ${{ github.actor }}
-            - Branch: ${{ github.ref }}
+            <h2>Commit Details</h2>
+            <ul>
+              <li><strong>Commit Hash:</strong> ${{ github.sha }}</li>
+              <li><strong>Committer:</strong> ${{ github.actor }}</li>
+              <li><strong>Branch:</strong> ${{ github.ref }}</li>
+            </ul>
 
-            You can check the commit at: https://github.com/${{ github.repository }}/commit/${{ github.sha }}
+            <p>You can view the commit <a href="https://github.com/${{ github.repository }}/commit/${{ github.sha }}">here</a>.</p>
 
           to: "daryakerman2002@gmail.com"
           from: ${{ secrets.EMAIL_USER }}
