@@ -25,7 +25,7 @@ Here are the workflows included in this repository:
    - Runs a basic "Hello, World!" script whenever code is pushed to the repository.
 
 4. **Issue Notification Workflow** (`issue-notification.yml`)
-   - Sends a notification when a new issue is created, providing the issue number, creator, and a link to the issue.
+   - Sends an email notification when a new issue is created, providing the issue number, creator, and a link to the issue.
 
 5. **Lint Python Workflow** (`lint-python.yml`)
    - Automatically lints Python code using `flake8` to check for coding style violations on every push or pull request.
