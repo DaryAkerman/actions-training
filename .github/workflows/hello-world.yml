@@ -8,7 +8,7 @@ jobs:
     steps:
       #This step isn't necessary, the operation here is only printing "Hello, World"
       - name: Checkout Code
-        users: actions/checkout@v3
+        uses: actions/checkout@v3
 
       - name: Say Hello
         run: echo "Hello, World!"
