@@ -11,5 +11,31 @@ The primary goal of this repository is to:
 
 Feel free to explore the workflows included in this repository, provide feedback, or even suggest improvements.
 
+## Workflows
 
-This repository is maintained by Dary.
+Here are the workflows included in this repository:
+
+1. **Daily Hello Workflow** (`daily-hello.yml`)
+   - Sends a simple "Hello!" message every day at 17:00 UTC.
+
+2. **Greet on Issue Workflow** (`greet-on-issue.yml`)
+   - Automatically posts a welcome message whenever a new issue is created in the repository.
+
+3. **Hello World Workflow** (`hello-world.yml`)
+   - Runs a basic "Hello, World!" script whenever code is pushed to the repository.
+
+4. **Issue Notification Workflow** (`issue-notification.yml`)
+   - Sends a notification when a new issue is created, providing the issue number, creator, and a link to the issue.
+
+5. **Lint Python Workflow** (`lint-python.yml`)
+   - Automatically lints Python code using `flake8` to check for coding style violations on every push or pull request.
+
+6. **Math Calculation Workflow** (`math-calc.yml`)
+   - Runs a simple math calculation (`2 + 2`) and logs the result.
+
+7. **Send Mail on Push Workflow** (`send-mail-on-push.yml`)
+   - Sends an email notification when code is pushed to the repository, including details like the commit hash, committer, and branch.
+
+---
+
+This repository is maintained by **Dary**. If you have any questions or suggestions, feel free to reach out!
