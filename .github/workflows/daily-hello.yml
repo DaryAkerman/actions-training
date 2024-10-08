@@ -1,0 +1,12 @@
+name: Daily Hello Workflow
+
+on:
+  schedule:
+    - cron: "0 17 * * *"
+
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say Hello
+        runs: echo "Hello! at 17:00"
