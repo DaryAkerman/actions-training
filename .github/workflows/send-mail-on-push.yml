@@ -1,0 +1,19 @@
+name: Send Email to Owner on push
+
+on: push
+
+jobs:
+  send-email:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send Email notification
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: ${{ secrets.SMTP_SERVER }}
+          server_port: ${{ secrets.SMTP_PORT }}
+          username: ${{ secrets.EMAIL_USER }}
+          password: ${{ secrets.EMAIL_PASSWORD }}
+          subject: "Code Pushed to Your Repository"
+          body: "A new commit has been pushed to your repository."
+          to: "daryakerman2002@gmail.com"
+          from: ${{ secrets.EMAIL_USER }}
