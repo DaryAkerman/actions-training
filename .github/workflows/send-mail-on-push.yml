@@ -1,4 +1,4 @@
-name: Send Email to Owner on push
+name: Send Email to Owner on Push
 
 on: push
 
@@ -6,14 +6,23 @@ jobs:
   send-email:
     runs-on: ubuntu-latest
     steps:
-      - name: Send Email notification
+      - name: Send Email Notification
         uses: dawidd6/action-send-mail@v3
         with:
           server_address: ${{ secrets.SMTP_SERVER }}
           server_port: ${{ secrets.SMTP_PORT }}
           username: ${{ secrets.EMAIL_USER }}
           password: ${{ secrets.EMAIL_PASSWORD }}
-          subject: "Code Pushed to Your Repository"
-          body: "A new commit has been pushed to your repository."
+          subject: "🚀 Code Pushed to Your Repository"
+          body: |
+            A new commit has been pushed to your repository.
+
+            **Commit Details**:
+            - Commit Hash: ${{ github.sha }}
+            - Committer: ${{ github.actor }}
+            - Branch: ${{ github.ref }}
+
+            You can check the commit at: https://github.com/${{ github.repository }}/commit/${{ github.sha }}
+
           to: "daryakerman2002@gmail.com"
           from: ${{ secrets.EMAIL_USER }}
