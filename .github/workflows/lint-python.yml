@@ -25,11 +25,3 @@ jobs:
         run: |
           flake8 . || echo "Linting completed with issues, please check the output above."
         continue-on-error: true
-
-      - name: Check for Lint Issues
-        if: ${{ steps.lint.outcome == 'success' }}
-        run: echo "🎉 Linting completed successfully without any issues!"
-
-      - name: Check for Lint Errors
-        if: ${{ steps.lint.outcome == 'failure' }}
-        run: echo "⚠️ Linting completed with issues. Please review the logs and fix the code style violations."
