@@ -1,0 +1,22 @@
+name: Greet New Issue
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Post Welcome comment
+        uses: peter-evans/create-or-update-comment@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          issue-number: ${{ github.event.issue.number }}
+          body: |
+            👋 Hello @${{ github.event.issue.user.login }}!
+
+            Thank you for opening an issue! If you see this message, then the workflow is working!
+            
+            Stay tuned for updates! 🚀
