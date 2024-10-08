@@ -1,0 +1,14 @@
+name: Simple Math
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  calculate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Preform the calculation
+        run: |
+          result=$((2+2))
+          echo "The result of 2+2 is: $result"
